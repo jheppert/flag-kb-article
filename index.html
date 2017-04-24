@@ -11,7 +11,7 @@
 <body>
     
     <h2>Drag this link to your bookmarks toolbar:</h2>
-    <a class="theBookmarkletLink" href="javascript:!function(){function t(t,e){var a=document.createElement('script'),i=document.getElementsByTagName('head')[0],n=!1;a.type='text/javascript',a.src=t,a.onload=a.onreadystatechange=function(){n||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(n=!0,e())},i.appendChild(a)}t('//jheppert.github.io/flag-kb-article/remote-script.js',function(){flagKBArticle.init()})}();">Flag KB Article</a>
+    <a class="theBookmarkletLink" href="!function(){function e(e,t){var a=document.createElement('script'),i=document.getElementsByTagName('head')[0],n=!1;a.type='text/javascript',a.src=e,a.onload=a.onreadystatechange=function(){n||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(n=!0,t())},i.appendChild(a)}e('//jheppert.github.io/flag-kb-article/remote-script.js'+(new Date).getMilliseconds(),function(){flagKBArticle.init()})}();">Flag KB Article</a>
 
 
     <style>
