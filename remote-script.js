@@ -16,7 +16,6 @@
                 articleComments = prompt("Why did you flag this article?");
                 var currentArticleIdentifier = currentUrl.replace('http://support.august.com/customer/en/portal/articles/', '');
                 currentArticleIdentifier = currentArticleIdentifier.split(/[?#]/)[0];
-                pageTitle = document.title;
 
                 var currentTopic = document.getElementsByClassName("sidebar_topic")[0];
 
