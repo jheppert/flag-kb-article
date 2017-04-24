@@ -27,8 +27,8 @@ javascript: (function() {
 
         articleUrl = currentUrl.split(/[?#]/)[0];;
         articleId = currentArticleIdentifier.substring(0, 7);
-        articleName = pageTitle.replace('August Home | ', '');
-        articleTopic = currentTopic.getElementsByTagName("h4")[0].innerHTML;
+        articleName = document.getElementById("content").getElementsByClassName("header")[0].getElementsByTagName("h2")[0].innerHTML.replace(/^[ ]+|[ ]+$/g,'').replace(/^\s+|\s+$/g, '');
+        articleTopic = currentTopic.getElementsByTagName("h4")[0].innerHTML.replace(/^[ ]+|[ ]+$/g,'');
 
 
         console.log('articleUrl: ' + articleUrl);
@@ -42,7 +42,8 @@ javascript: (function() {
 
     // Set up the GET query string:
     var theQueryString = "ID=" + articleId + "&Link=" + articleUrl + "&Title=" + articleName + "&Topic=" + articleTopic;
-    theQueryString += "&Needs Updating=YES&Comments=" + articleComments;
+    theQueryString += "&Flagged=YES&Comments=" + articleComments;
+    theQueryString += "&Has Images=-&Screenshots=-&Videos=-&Activity Feed=-&Needs Updating=-";
     theQueryString = theQueryString.replace(/ /g, '+');
     var theUrlWithQueryString = "https://script.google.com/macros/s/AKfycbxB9FK82TITEFV3waqc7L12pjNdCiyDH875o2JtzuEgmw88W8w6/exec?" + encodeURI(theQueryString);
     

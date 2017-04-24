@@ -1,4 +1,4 @@
-/*   
+  /*   
    Copyright 2011 Martin Hawksey
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -61,10 +61,13 @@ function handleResponse(e) {
     if(duplicateRow) {
       // The row already exists
       // TODO: Get the existing row, make the "Needs Updating" column "YES"
-      var needsUpdatingColumnNumber = findKeyColumn("Needs Updating");
-      if(needsUpdatingColumnNumber) {
-        sheet.getRange(duplicateRow+1, needsUpdatingColumnNumber+1).setValue('YAAASS');
-      }
+      var flaggedColumnNumber = findKeyColumn("Flagged");
+      var commentsColumnNumber = findKeyColumn("Comments");
+      var oldCommentsValue = sheet.getRange(duplicateRow+1, commentsColumnNumber+1).getValues();
+      if(flaggedColumnNumber && commentsColumnNumber) {
+        sheet.getRange(duplicateRow+1, flaggedColumnNumber+1).setValue(e.parameter["Flagged"]);
+        sheet.getRange(duplicateRow+1, commentsColumnNumber+1).setValue(oldCommentsValue + " --- " + e.parameter["Comments"]);
+      } // else there is an error: didn't find the columns
 
     } else {
       // No duplicate, add a row:
@@ -82,7 +85,7 @@ function handleResponse(e) {
 
     // return json success results
     return ContentService
-          .createTextOutput(JSON.stringify({"result":"success", "row": nextRow, "duplicateRow": duplicateRow, "needsUpdatingColumnNumber": needsUpdatingColumnNumber}))
+          .createTextOutput(JSON.stringify({"result":"success", "duplicateRow": duplicateRow, "flaggedColumnNumber": flaggedColumnNumber, "commentsColumnNumber":commentsColumnNumber, "headers length":headers.length}))
           .setMimeType(ContentService.MimeType.JSON);
     // END try
   } catch(e){
