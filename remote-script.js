@@ -1,7 +1,7 @@
 ! function() {
     "use strict";
     var a = window.flagKBArticle = {
-        version: "{version}",
+        version: "{1.1}",
         init: function() {
             var articleUrl = '';
             var articleId = '';
@@ -49,10 +49,6 @@
             theQueryString += "&Has Images=-&Screenshots=-&Videos=-&Activity Feed=-&Needs Updating=-";
             theQueryString = theQueryString.replace(/ /g, '+');
             var theUrlWithQueryString = "https://script.google.com/macros/s/AKfycbxB9FK82TITEFV3waqc7L12pjNdCiyDH875o2JtzuEgmw88W8w6/exec?" + encodeURI(theQueryString);
-            
-            // var theUrlWithQueryString = "https://script.google.com/macros/s/AKfycbxB9FK82TITEFV3waqc7L12pjNdCiyDH875o2JtzuEgmw88W8w6/exec?ID=123123&Title=Hi+there+person&Has+Images=-&Screenshots=-&Videos=-&Activity+Feed=-&Needs+Updating=YES&Comments=The+thing+is+cool%21"
-
-            // alert("URL: " + theUrlWithQueryString);
 
 
             // Setup & execute the GET Ajax request:
