@@ -15,6 +15,10 @@
             var currentUrl = window.location.href;
             if(currentUrl.startsWith('http://support.august.com/customer/')) {
                 articleComments = prompt("Why did you flag this article?");
+                if(articleComments == null) {
+                    console.log("Ok, nevermind then");
+                    return null;
+                }
                 
                 if(currentUrl.includes('http://support.august.com/customer/en/portal/articles/')) {
                     currentArticleIdentifier = currentUrl.replace('http://support.august.com/customer/en/portal/articles/', '');
