@@ -8,13 +8,22 @@
             var articleName = '';
             var articleTopic = '';
             var articleComments = '';
+            var currentArticleIdentifier = '';
             
 
             
             var currentUrl = window.location.href;
             if(currentUrl.startsWith('http://support.august.com/customer/')) {
                 articleComments = prompt("Why did you flag this article?");
-                var currentArticleIdentifier = currentUrl.replace('http://support.august.com/customer/en/portal/articles/', '');
+                
+                if(currentUrl.includes('http://support.august.com/customer/en/portal/articles/')) {
+                    currentArticleIdentifier = currentUrl.replace('http://support.august.com/customer/en/portal/articles/', '');
+                } else if(currentUrl.includes('http://support.august.com/customer/portal/articles/')) {
+                    currentArticleIdentifier = currentUrl.replace('http://support.august.com/customer/portal/articles/', '');
+                } else {
+                    console.log("I don't understant this URL")
+                }
+                
                 currentArticleIdentifier = currentArticleIdentifier.split(/[?#]/)[0];
 
                 var currentTopic = document.getElementsByClassName("sidebar_topic")[0];
