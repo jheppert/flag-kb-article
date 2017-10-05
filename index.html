@@ -10,28 +10,78 @@
 </head>
 <body>
     
-    <h2>Drag this link to your bookmarks toolbar:</h2>
-    <a class="theBookmarkletLink" href="javascript:!function(){function e(e,t){var a=document.createElement('script'),i=document.getElementsByTagName('head')[0],n=!1;a.type='text/javascript',a.src=e,a.onload=a.onreadystatechange=function(){n||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(n=!0,t())},i.appendChild(a)}e('//jheppert.github.io/flag-kb-article/remote-script.js?'+(new Date).getMilliseconds(),function(){flagKBArticle.init()})}();">Flag KB Article</a>
-
+    <div class="wrapper">
+        <h1>Flag KB articles for review</h1>
+        <p class="body-copy">See something? Say something!</p>
+        <h2>Installing</h2>
+        <ul class="body-copy">
+        <li>Make sure your bookmarks toolbar or sidebar is visible (usually found under your browser's View menu).</li>
+        <li>Drag the button below onto your bookmarks toolbar or sidebar.</li>
+        </ul>
+        <h2>Using</h2>
+        <p class="body-copy">When you are viewing a support article that needs attention, click on the bookmark you dragged to your toolbar. This will add a flag in our database, along with any comments you make.</p>
+        
+        <div class="bookmark-wrapper">
+            <p class="drag-instructions">Drag this to your bookmarks bar:</p>
+            <a class="big-link" href="javascript:!function(){function e(e,t){var a=document.createElement('script'),i=document.getElementsByTagName('head')[0],n=!1;a.type='text/javascript',a.src=e,a.onload=a.onreadystatechange=function(){n||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(n=!0,t())},i.appendChild(a)}e('//jheppert.github.io/flag-kb-article/remote-script.js?'+(new Date).getMilliseconds(),function(){flagKBArticle.init()})}();">Flag KB Article</a>
+        </div>
+    </div>
 
     <style>
-    
-    body {
+        body {
             font-family: 'Proxima Nova', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
             font-size: 17px;
         }
 
-    .theBookmarkletLink {
-        display: inline-block;
-        padding: 1em 2em 0.9em 2em;
-        background-color: #00A2B8;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 1em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        h1, h2 {
+            margin-bottom: 0;
+        }
 
+        h1 {
+            /*font-family: "ProximaNova-Light";*/
+            font-weight: 300;
+            font-size: 3em;
+            color: #FF1911;
+            margin-bottom: 0.2em;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-top: 2em;
+            margin-bottom: 0.4em;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .body-copy {
+            font-size: 1.1em;
+            line-height: 120%;
+            margin-top: 0;
+        }
+
+        .bookmark-wrapper {
+            text-align: center;
+            margin-top: 4em;
+        }
+
+        .drag-instructions {
+            font-weight: bold;
+        }
+
+        .big-link {
+            display: inline-block;
+            padding: 1em 2em 0.9em 2em;
+            background-color: #00A2B8;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 
 </body>

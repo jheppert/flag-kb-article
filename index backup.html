@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Add KB Article to List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+</head>
+<body>
+    
+    <h2>Drag this link to your bookmarks toolbar:</h2>
+    <a class="theBookmarkletLink" href="javascript:!function(){function e(e,t){var a=document.createElement('script'),i=document.getElementsByTagName('head')[0],n=!1;a.type='text/javascript',a.src=e,a.onload=a.onreadystatechange=function(){n||this.readyState&&'loaded'!=this.readyState&&'complete'!=this.readyState||(n=!0,t())},i.appendChild(a)}e('//jheppert.github.io/flag-kb-article/remote-script.js?'+(new Date).getMilliseconds(),function(){flagKBArticle.init()})}();">Flag KB Article</a>
+
+
+    <style>
+    
+    body {
+            font-family: 'Proxima Nova', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+            font-size: 17px;
+        }
+
+    .theBookmarkletLink {
+        display: inline-block;
+        padding: 1em 2em 0.9em 2em;
+        background-color: #00A2B8;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    </style>
+
+</body>
+</html>
